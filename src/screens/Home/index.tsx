@@ -11,6 +11,11 @@ export function Home() {
         console.log("Você clicou no botão de Adicionar!");
     }
 
+    function handleParticipantRemove(name: string){
+        console.log(`Você clicou no botão de removar o participante! ${name}`);
+
+    }
+
     return (
         <View style={styles.container}>
             <Text style={styles.eventName}>
@@ -18,7 +23,7 @@ export function Home() {
             </Text>
 
             <Text style={styles.eventDate}>
-                Sexta, 4 de Novembro de 2022.
+                Segunda, 17 de Julho de 2023.
             </Text>
 
             <View style={styles.form}>
@@ -35,9 +40,9 @@ export function Home() {
                 </TouchableOpacity>
             </View>
 
-            <Participant />
-            <Participant />
-            <Participant />
+            <Participant name="Cybelle Vasconcelos" onRemove={() => handleParticipantRemove("Cybelle Vasconcelos")} />
+            <Participant name="Fred Vasconcelos" onRemove={() => handleParticipantRemove("Fred Vasconcelos")}  />
+            <Participant name="Luna Vasconcelos"  onRemove={() => handleParticipantRemove("Luna Vasconcelos")}  />
             
         </View>
     );
