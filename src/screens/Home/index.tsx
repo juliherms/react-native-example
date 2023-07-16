@@ -1,5 +1,6 @@
 import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './styles';
+import { Participant } from '../../components/Participant';
 
 //quando voce remove o export default isso faz com que no import do componente voce tenha que envolver com {} o componente que voce quer
 //exportacao nomeada
@@ -33,6 +34,10 @@ export function Home() {
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            <Participant />
+            <Participant />
+            <Participant />
             
         </View>
     );
