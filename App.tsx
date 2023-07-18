@@ -1,3 +1,4 @@
+import { StatusBar } from 'react-native';
 import { Home } from './src/screens/Home';
 
 // no JSX os componentes sempre devem ter letra maiúscula
@@ -5,6 +6,12 @@ import { Home } from './src/screens/Home';
 // no react native o flex box já é ativado
 export default function App() {
   return (
-    <Home />      
+    <>
+      <StatusBar 
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent />
+      <Home />
+    </>
   );
 }
