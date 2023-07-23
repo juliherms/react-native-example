@@ -1,3 +1,5 @@
+import React, { useState } from 'react';
+
 import { Text, View, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { styles } from './styles';
 import { Participant } from '../../components/Participant';
@@ -7,12 +9,17 @@ import { Participant } from '../../components/Participant';
 
 export function Home() {
 
-    const participants = ['Juliherms Vasconcelos', 'Cybelle Vasconcelos','Sergio Vasconcelos', 'Fred Vasconcelos', 'Luna Vasconcelos','Silvio Vasconcelos','Joveci Vasconcelos','Tuilo Vasconcelos','Julio Vasconcelos']
+    //gerencia a variavel com useState
+    const [participants, setParticipants] = useState(['Juliherms Vasconcelos']);
 
+    
     function handleParticipantAdd() {
         if (participants.includes("Juliherms Vasconcelos")) {
             return Alert.alert("Participante existe","Já existe um participante na lista com esse nome.");
         }
+
+        //adiciona um participante
+        setParticipants( prevState => [...prevState, 'Ana']);
     }
 
     function handleParticipantRemove(name: string){
