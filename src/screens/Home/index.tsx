@@ -5,7 +5,7 @@ import { styles } from './styles';
 import { Participant } from '../../components/Participant';
 
 //quando voce remove o export default isso faz com que no import do componente voce tenha que envolver com {} o componente que voce quer
-//exportacao nomeada a
+//exportacao nomeada
 
 export function Home() {
 
@@ -29,7 +29,7 @@ export function Home() {
 
         Alert.alert('Remover',`Remover o participante ${name}?`, [
             {
-                text: 'Sim',
+                text: 'Sima',
                 //atualizar a lista retirando o nome informado como parametro
                 onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name))
             },
