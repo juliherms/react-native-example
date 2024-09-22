@@ -14,7 +14,7 @@ export function Home() {
     const [participantName, setParticipantName] = useState('');
 
 
-    
+    // adiciona um participante
     function handleParticipantAdd() {
         if (participants.includes(participantName)) {
             return Alert.alert("Participante existe","Já existe um participante na lista com esse nome.");
@@ -25,12 +25,17 @@ export function Home() {
         setParticipantName(''); // limpa o input
     }
 
+    // remove um participante
     function handleParticipantRemove(name: string){
+        
+        // return console.log(name) -> uma forma de debugar
 
+        // adiciona uma tomada de decisão no alerta
         Alert.alert('Remover',`Remover o participante ${name}?`, [
             {
-                text: 'Sima',
+                text: 'Sim',
                 //atualizar a lista retirando o nome informado como parametro
+                //retorna todos os participantes menos o que não tem o name
                 onPress: () => setParticipants(prevState => prevState.filter(participant => participant !== name))
             },
             {
@@ -47,7 +52,7 @@ export function Home() {
             </Text>
 
             <Text style={styles.eventDate}>
-                Segunda, 17 de Julho de 2023.
+                Domingo, 22 de Setembro de 2024.
             </Text>
 
             <View style={styles.form}>
@@ -69,7 +74,7 @@ export function Home() {
             <FlatList
                 data={participants}
                 keyExtractor={item => item}
-                renderItem={({ item }) =>(
+                renderItem={({ item }) => (
                     <Participant
                             key={item} 
                             name={item}
@@ -83,7 +88,6 @@ export function Home() {
                     </Text>
                 )}
             />
-            
         </View>
     );
 }
